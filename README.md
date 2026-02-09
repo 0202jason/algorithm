@@ -1,14 +1,14 @@
-# 🚀 Algorithm Journey: 다시 시작하는 코딩 테스트
+# 🚀 Algorithm
 
 > **"삽질은 하되, 같은 구덩이는 파지 말자."**
-> 2년 전 전공 지식을 심폐소생술 하며, Python으로 알고리즘을 부수고 있는 저장소입니다.
+> 목표는 SWEA B형 취득
 
 ---
 
 ## 🛠 Tech Stack
 - **Language**: Python 3.x (주력)
 - **Environment**: Visual Studio Code, PyCharm
-- **Platform**: Baekjoon, LeetCode, Programmers
+- **Platform**: Baekjoon, Programmers, SWEA
 
 ---
 
@@ -23,9 +23,10 @@
 ---
 
 ## 📂 저장소 구조
-- `Baekjoon/`: 백준 온라인 저지 문제 풀이
-- `Programmers/`: 프로그래머스 고득점 Kit 및 레벨별 풀이
+- `Baekjoon/`: 백준 문제 풀이
+- `Programmers/`: 프로그래머스 레벨별 풀이
 - `Concepts/`: 알고리즘 이론 정리 (DFS/BFS, DP, Greedy 등)
+- `SWEA/`: SWEA 문제 풀이
 
 ---
 
