@@ -1,33 +1,31 @@
-#import sys
+import sys
 
-#sys.stdin = open("sample_input.txt", "r")
+sys.stdin = open("sample_input.txt", "r")
 
 T = int(input())
 
-def dfs(current, goal):
-    if current == goal:
+def dfs(start, goal, graph, visited):
+    if start == goal:
         return 1
-    stack[current] = True
-    for next in graph.get(current, []):
-        if not stack[next]:
-            if dfs(next, goal):
+    visited[start] = 1
+
+    for next in graph[start]:
+        if not visited[next]:
+            if dfs(next, goal, graph, visited):
                 return 1
     return 0
 
 for tc in range(1, T+1):
     V, E = map(int, input().split())
-    graph = {}
+    graph_map = [[] for _ in range (V+1)]
 
     for _ in range(E):
         u, v = map(int, input().split())
-        if u not in graph:
-            graph[u] = []
-        graph[u].append(v)
+        graph_map[u].append(v)
 
-    # print(graph)
     S, G = map(int, input().split())
-    stack = [0] * (V + 1)
-    answer = dfs(S,G)
-    # print(answer)
+    visited_list = [0] * (V + 1)
+    answer = dfs(S,G, graph_map, visited_list)
+
 
     print(f'#{tc} {answer}')
