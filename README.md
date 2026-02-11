@@ -16,7 +16,7 @@
 ## 📂 저장소 구조
 - `Baekjoon/`: 백준 문제 풀이
 - `Programmers/`: 프로그래머스 레벨별 풀이
-- `Concepts/`: 알고리즘 이론 정리 (DFS/BFS, DP, Greedy 등)
+- [`Concepts/`](./Concepts): 알고리즘 이론 정리 (DFS/BFS, DP, Greedy 등)
 - [`SWEA/`](./SWEA): SWEA 문제 풀이
 
 ---
