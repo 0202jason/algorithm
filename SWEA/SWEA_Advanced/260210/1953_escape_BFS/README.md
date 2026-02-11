@@ -1,8 +1,8 @@
-## 1953_탈주범 검거_BFS
+# 1953_탈주범 검거_BFS
 
 > **사용 기술**: `BFS(너비 기반 검색)`, `queue`  
 
-### 코드
+## 코드
 ```python
 from collections import deque
 
@@ -61,25 +61,25 @@ for tc in range(1, T + 1):
     print(f"#{tc} {bfs(R, C, L)}")
 ```
 
-### 해결 과정
+## 해결 과정
 
 - 어제 풀었던 [2105_디저트카페](https://github.com/0202Jason/Algorithm/tree/master/SWEA/SWEA_Advanced/260209/2105_dessert(dfs%2C%20recur)) 문제를 생각하고 깊이 기반 검색을 했다가 모든 경우의 수를 다 탐색해서 난감했다.
 - 이후 AI 도움을 받아 `queue`를 사용하는 방법과 `queue`에 (좌표, 시간값)을 튜플로 넣고 빼며 카운트를 올리는 로직을 구현하였다.
 
-### AI 활용 과정
+## AI 활용 과정
 
-#### 아이디어 생성
+### 아이디어 생성
 ![아이디어](./idea.png)  
 
-#### 초안 작성
+### 초안 작성
 ![초안](./introduction.png)
 
-#### `queue` 생성 도움
+### `queue` 생성 도움
 ![도움](./help1.png)
 
-#### `queue` 디버깅 도움
+### `queue` 디버깅 도움
 ![디버깅](./debug.png)
 
-#### 로직 설명
+### 로직 설명
 ![로직1](logic1.png)  
 ![로직2](logic2.png)
