@@ -18,8 +18,8 @@ for tc in range(1, T+1):
             if maze[i][j] == 2:
                 si, sj = i, j
 
-    di = []
-    dj = []
+    di = [-1, 1, 0, 0]
+    dj = [0, 0, -1, 1]
 
     def dfs(i, j):
         visited = [[0] * N for _ in range(N)]
