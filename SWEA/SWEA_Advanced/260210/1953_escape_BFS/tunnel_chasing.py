@@ -26,11 +26,13 @@ def is_connected(d, next):                  # 길이 연결되어있는지 확�
 
 def bfs(i, j, L):
     queue = deque([(i, j, 1)])              # 큐를 생성해서 푸는데 이해가 잘 안됨
-    visited[i][j] = 1                       # 도둑이 출발한 자리 표시
+                                            # 설명: 처음 시작점과 시간값(1)을 
+                                            # 최초의 큐 값 튜플로 리스트에 추가한다
+    visited[i][j] = 1                       # 도둑이 출발한 자리 방문 표시
     count = 1                               # 도둑이 갈 수 있는 칸 수
 
     while queue:
-        i, j, curr_time = queue.popleft()   
+        i, j, curr_time = queue.popleft()   # 확인 한 칸은 'pop' 해서 리스트에서 비움
 
         if curr_time >= L:                  # 시간이 L 이상이면 아래 조건문 실행 안함
             continue
@@ -41,7 +43,8 @@ def bfs(i, j, L):
             if 0 <= ni < N and 0 <= nj < M and not visited[ni][nj]:
                 if is_connected(d, tunnel_list[ni][nj]):    # 다음 칸과 연결되어있는지 확인
                     visited[ni][nj] = 1                     # 다음 칸 방문 체크
-                    queue.append((ni, nj, curr_time + 1))   # 이거 보니까 큐에 튜플로 좌표와 시간값을 넣는듯
+                    queue.append((ni, nj, curr_time + 1))   # 방문 하지 않은 칸을 큐에 넣어서 'pop' 될 때 까지 기다린다
+                                                            # 시간값이 최대가 되면 위의 컨티뉴와 이어짐
                     count += 1                              # 방문한 칸 수 증가
     return count
 
