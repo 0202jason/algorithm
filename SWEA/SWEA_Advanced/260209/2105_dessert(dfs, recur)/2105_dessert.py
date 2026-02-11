@@ -9,7 +9,7 @@ T = int(input())
 di = [1, 1, -1, -1]                             # 대각선 방향벡터
 dj = [1, -1,-1, 1]
 
-def dfs(ci, cj, d, v):                          # dfs 함수
+def dfs(ci, cj, d, v):                          # dfs 함수 d = 방향, v = 방문 리스트
     global ans, si, sj                          # 글로벌 변수
 
     if d == 3 and (ci, cj) == (si, sj):         # 사각형이 완성되는 순간 리턴
