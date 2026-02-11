@@ -1,6 +1,7 @@
 ## 디저트 카페
 
 > 연습 코드는 dessert_practice.py에 있음
+[발표준비](./presentation)
 ```python
 # import sys
 # import pprint
