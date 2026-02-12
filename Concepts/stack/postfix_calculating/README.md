@@ -1,7 +1,6 @@
 ## 1. 후위표기법 변환 로직 (Infix → Postfix)
 
 핵심은 이거야: **"숫자는 그냥 지나가고, 연산자는 스택이라는 대기실에서 서열 싸움을 한다."**  
-[예시문제](Algorithm/SWEA/assignment/260211/D4_calculator2_stack)
 
 ### 💡 icp와 isp의 정체
 
