@@ -1,7 +1,7 @@
 ## 1. 후위표기법 변환 로직 (Infix → Postfix)
 
-핵심은 이거야: **"숫자는 그냥 지나가고, 연산자는 스택이라는 대기실에서 서열 싸움을 한다."**
-[예시문제](/Algorithm/SWEA/assignment/260211/D4_calculator2_stack)
+핵심은 이거야: **"숫자는 그냥 지나가고, 연산자는 스택이라는 대기실에서 서열 싸움을 한다."**  
+[예시문제](SWEA/assignment/260211/D4_calculator2_stack)
 
 ### 💡 icp와 isp의 정체
 
@@ -51,11 +51,62 @@
 
 ---
 
-### 🙋‍♂️ 재현아, 이거 이해했는지 확인 퀴즈!
+## 코드 구현
 
-1. 코드에서 `left / right`를 하면 결과가 **실수(예: 2.5)**가 나오지? 만약 문제에서 정수 결과만 원한다면 어디를 고쳐야 할까?
-2. 왜 `(`는 스택 밖에서는 우선순위가 3인데, 스택 안에서는 0이 될까? (힌트: 0이 아니면 그 뒤에 오는 `+`나 `-`가 `(` 위에 쌓일 수 있을까?)
+```python
+icp = {"+": 1, "-": 1, "*": 2, "/": 2, "(": 3}
+isp = {"+": 1, "-": 1, "*": 2, "/": 2, "(": 0}
 
-**이 로직이 머릿속에 그려지면 너도 이제 '스택 마스터'야. 이해 안 가는 구체적인 줄(line) 있으면 바로 물어봐!**
 
-**Would you like me to draw a manual trace table for a simpler expression like `2 + 3 * 4` so you can see the stack changes line by line?**
+def get_postfix(infix, n):
+    postfix = ""
+    stack = []
+
+    for i in range(n):
+        if infix[i] not in "()+-*/":
+            postfix += infix[i]
+        else:
+            if infix[i] == ")":
+                while stack:
+                    op = stack.pop()
+                    if op == "(":
+                        break
+
+                    postfix += op
+            else:
+                while stack and icp[infix[i]] <= isp[stack[-1]]:
+                    postfix += stack.pop()
+
+                stack.append(infix[i])
+
+    while stack:
+        postfix += stack.pop()
+
+    return postfix
+
+
+def cal_postfix(postfix):
+
+    stack = []
+
+    for c in postfix:
+        if c not in "+-/*":
+            stack.append(int(c))
+        else:
+            right = stack.pop()
+            left = stack.pop()
+
+            result = 0
+
+            if c == "+":
+                result = left + right
+            elif c == "-":
+                result = left - right
+            elif c == "*":
+                result = left * right
+            elif c == "/":
+                result = left / right
+
+            stack.append(result)
+    return stack.pop()
+```
