@@ -4,4 +4,4 @@
 <summary><b>stack</b></summary> 
   
 - [후위 연산](./stack/postfix_calculating)
-
+- [백트래킹](./stack/backtracking)
