@@ -68,23 +68,7 @@ for tc in range(1, T + 1):
 - 어제 풀었던 [2105_디저트카페](https://github.com/0202Jason/Algorithm/tree/master/SWEA/SWEA_Advanced/260209/2105_dessert(dfs%2C%20recur)) 문제를 생각하고 깊이 기반 검색을 했다가 모든 경우의 수를 다 탐색해서 난감했다.
 - 이후 AI 도움을 받아 `queue`를 사용하는 방법과 `queue`에 (좌표, 시간값)을 튜플로 넣고 빼며 카운트를 올리는 로직을 구현하였다.
 
-## AI 활용 과정
 
-### 아이디어 생성
-![아이디어](./idea.png)  
-
-### 초안 작성
-![초안](./introduction.png)
-
-### `queue` 생성 도움
-![도움](./help1.png)
-
-### `queue` 디버깅 도움
-![디버깅](./debug.png)
-
-### 로직 설명
-![로직1](logic1.png)  
-![로직2](logic2.png)
 ---
 
 ### 1. 주석 체크 및 보완
@@ -154,6 +138,3 @@ for tc in range(1, T + 1):
 1. 큐에서 `popleft()` 대신 `pop()`을 쓰면 (즉, 뒤에서 꺼내면) 어떻게 될까? 그게 바로 네가 저번에 실수했던 **DFS**처럼 동작하게 돼. 왜 그럴까?
 2. `count += 1`을 `while`문 밖이 아니라 `queue.append` 하는 시점에 바로 해주는 이유가 뭘까? (힌트: 큐에 들어간다는 건 이미 방문할 장소로 확정됐다는 뜻이지!)
 
-**이제 이 코드로 SWEA에 제출해 봐! 아마 기분 좋게 "Pass" 뜰 거야. 다음은 이 로직을 활용한 다른 BFS 문제 도전해 볼래?**
-
-**Would you like me to find another BFS problem that is similar to this one to help solidify your understanding?**
