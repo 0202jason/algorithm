@@ -15,37 +15,37 @@ sys.stdin = open("small_sample.txt", "r")
 T = int(input())
 
 
-def check(line, N, X):
+def check(lst, N, X):
     
     visited = [0] * N  # 경사로가 이미 설치되었는지 확인
     
     for i in range(N - 1):
         # 높이가 같은 경우 통과
-        if line[i] == line[i+1]:
+        if lst[i] == lst[i+1]:
             continue
         
         # 높이 차이가 1보다 큰 경우 건설 불가능
-        if abs(line[i] - line[i+1]) > 1:
+        if abs(lst[i] - lst[i+1]) > 1:
             return False
         
         # 내리막길
-        if line[i] > line[i+1]:
+        if lst[i] > lst[i+1]:
             # 경사로 길이 X 만큼 검사
             for j in range(i + 1, i + 1 + X):
                 # 범위를 벗어나거나, 높이가 일정하지 않거나, 이미 경사로가 있으면 안됨
-                if j >= N or line[j] != line[i+1] or visited[j]:
+                if j >= N or lst[j] != lst[i+1] or visited[j]:
                     return False
                 # 경사로 설치
                 visited[j] = 1
         
         # 오르막길을 만난 경우
-        elif line[i] < line[i+1]:
+        elif lst[i] < lst[i+1]:
             # 경사로 길이 L만큼 뒤를 체크
             for j in range(i, i - X, -1):
                 # 범위를 벗어나거나, 높이가 일정하지 않거나, 이미 경사로가 있으면 안됨
-                if j < 0 or line[j] != line[i] or visited[j]:
+                if j < 0 or lst[j] != lst[i] or visited[j]:
                     return False
-                visited[j] = 1  # 경사로 설치 표시냥!
+                visited[j] = 1  # 경사로 설치 표시
                 
     return True
 
