@@ -1,9 +1,11 @@
 # Algorithm
 
 알고리즘 문제 풀이 및 개념 정리 저장소입니다.  
-Python으로 작성하며, 꾸준한 풀이와 기록을 목표로 합니다.
+Python과 Java로 작성하며, 꾸준한 풀이와 기록을 목표로 합니다.
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+
+![Java](https://img.shields.io/badge/Java-007396?style=flat-square&logo=openjdk&logoColor=white)
 
 ---
 
@@ -15,9 +17,9 @@ Python으로 작성하며, 꾸준한 풀이와 기록을 목표로 합니다.
 
 ---
 
-## Problems &nbsp; <sub>total 86</sub>
+## Problems &nbsp; <sub>total 87</sub>
 
-[Baekjoon](#baekjoon) &nbsp;·&nbsp; 2 problems &nbsp;|&nbsp; [SWEA](#swea) &nbsp;·&nbsp; 68 problems &nbsp;|&nbsp; [Programmers](#programmers) &nbsp;·&nbsp; 2 problems &nbsp;|&nbsp; [AlgoAlgo](#algoalgo) &nbsp;·&nbsp; 14 problems
+[Baekjoon](#baekjoon) &nbsp;·&nbsp; 2 problems &nbsp;|&nbsp; [SWEA](#swea) &nbsp;·&nbsp; 68 problems &nbsp;|&nbsp; [Programmers](#programmers) &nbsp;·&nbsp; 3 problems &nbsp;|&nbsp; [AlgoAlgo](#algoalgo) &nbsp;·&nbsp; 14 problems
 
 ### Baekjoon
 
@@ -70,11 +72,12 @@ Python으로 작성하며, 꾸준한 풀이와 기록을 목표로 합니다.
 
 ### Programmers
 
-<sub>2 problems</sub>
+<sub>3 problems</sub>
 
 | Title | &nbsp; | Title |
 |:---|:---:|:---|
 | [베스트앨범](programmers/2604/best_album/베스트앨범.py) | &nbsp; | [여행경로](programmers/2604/travel_route/여행경로.py) |
+| [올바른괄호](programmers/2608/올바른괄호.java) | &nbsp; | &nbsp; |
 
 ### AlgoAlgo
 

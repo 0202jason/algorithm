@@ -3,7 +3,7 @@ Algorithm 리포지토리 README 자동 생성 스크립트
 
 파일명 규칙:
   baekjoon/       → 2603_색종이.py    (번호_제목.py)
-  programmers/    → 두개뽑아서.py     (제목.py, 번호 없음)
+  programmers/    → 두개뽑아서.py 또는 두개뽑아서.java (제목, 번호 없음)
   SWEA/           → 1234_파리퇴치.py  (번호_제목.py)
   algoalgo_arena/ → 임의 파일명 허용
 
@@ -61,14 +61,19 @@ def collect(platform: str, meta: dict) -> list:
     if not folder.exists():
         return []
     results = []
-    for py_file in sorted(folder.rglob('*.py')):
-        if py_file.stem.startswith('__'):
+    source_files = sorted(
+        file
+        for pattern in ('*.py', '*.java')
+        for file in folder.rglob(pattern)
+    )
+    for source_file in source_files:
+        if source_file.stem.startswith('__'):
             continue
-        number, title = parse_filename(py_file.stem, meta['has_number'])
+        number, title = parse_filename(source_file.stem, meta['has_number'])
         results.append({
             'number': number,
             'title':  title,
-            'path':   py_file.relative_to(ROOT).as_posix(),
+            'path':   source_file.relative_to(ROOT).as_posix(),
         })
     return results
 
@@ -144,8 +149,9 @@ def render(all_problems: dict, concepts: list) -> str:
     lines = [
         '# Algorithm\n',
         '알고리즘 문제 풀이 및 개념 정리 저장소입니다.  ',
-        'Python으로 작성하며, 꾸준한 풀이와 기록을 목표로 합니다.\n',
+        'Python과 Java로 작성하며, 꾸준한 풀이와 기록을 목표로 합니다.\n',
         '![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)\n',
+        '![Java](https://img.shields.io/badge/Java-007396?style=flat-square&logo=openjdk&logoColor=white)\n',
         '---\n',
         '## Goals\n',
         '- [ ] SWEA B형 취득',
@@ -199,4 +205,4 @@ if __name__ == '__main__':
         f.write(readme)
 
     total = sum(len(v) for v in all_problems.values())
-    print(f'Done — {total} problems, {len(concepts)} concepts')
+    print(f'Done - {total} problems, {len(concepts)} concepts')
